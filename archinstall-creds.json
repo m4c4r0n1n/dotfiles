@@ -1,0 +1,9 @@
+{
+  "users": {
+    "friend": {
+      "password": "yourfriendspassword",
+      "sudo": true
+    }
+  },
+  "root_password": "rootpassword"
+}
