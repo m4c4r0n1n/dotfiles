@@ -26,16 +26,17 @@ if [ -d "$DOTFILES_DIR/grub-extras/CyberGRUB-2077" ]; then
 fi
 
 # Install Yay if not present
-if ! command -v yay &> /dev/null; then
+if ! command -v yay &>/dev/null; then
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   cd /tmp/yay
   makepkg -si --noconfirm
 fi
 
 # Install fastfetch if not present
-if ! command -v fastfetch &> /dev/null; then
+if ! command -v fastfetch &>/dev/null; then
   yay -S --noconfirm fastfetch
 fi
+
 # Run other custom scripts (if included)
 if [ -d "$DOTFILES_DIR/other-scripts" ]; then
   for script in "$DOTFILES_DIR/other-scripts"/*.sh; do
