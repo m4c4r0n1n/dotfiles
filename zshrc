@@ -59,3 +59,6 @@ export TERM=xterm-kitty
 
 # Run fastfetch on startup
 fastfetch
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/home/chrome/.local/share/nvim/lazy-rocks/hererocks/bin"
+export PATH="/home/chrome/.local/share/nvim/lazy-rocks/hererocks/bin:$PATH"
