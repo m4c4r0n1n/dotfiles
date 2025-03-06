@@ -1,0 +1,4 @@
+nvim/*.swp
+nvim/*.swo
+nvim/*.tmp
+nvim/personal_*
