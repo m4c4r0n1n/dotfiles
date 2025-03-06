@@ -43,16 +43,15 @@ setopt appendhistory
 # Hide shell job control messages
 source ~/.cache/wal/colors-tty.sh
 
-# Custom prompt_context to include Arch icon at the beginning
+# Custom prompt_context with Arch icon and "chrome" only
 prompt_context() {
-    local arch_icon="%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})%(?:$(print -Pn "\uf303"):$(print -Pn "\uf303"))"
-    if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-        prompt_segment black default "$arch_icon %(!.%{%F{yellow}%}.)%n"
-    else
-        prompt_segment black default "$arch_icon"
-    fi
+    local arch_icon="%(?.%{$fg_bold[color4]%}.%{$fg_bold[color1]%})$(print -Pn "\uf303")"
+    prompt_segment "$color0" "$color7" "$arch_icon chrome"
 }
 
+# Show directory after prompt_context
+PROMPT='$(prompt_context)%{$reset_color%} %{$fg_bold[color2]%}%~%{$reset_color%} '
+RPROMPT=''
 
 # Set TERM to ensure fastfetch detects Kitty correctly
 export TERM=xterm-kitty
